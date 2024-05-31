@@ -2,7 +2,13 @@
   <div class="w-[100%]">
 
     <div class="max-w-[80%] mx-auto">
-      <a routerLink="/add"><button class="py-3 px-5 text-lg bg-blue-500 rounded-md text-white my-3">Add Product</button></a>
+     <div class="my-3 flex justify-between items-center">
+      <a routerLink="/add"><button class="py-3 px-5 text-lg bg-blue-500 rounded-md text-white">Add Product</button></a>
+      <div class="flex items-center gap-6">
+        <a routerLink="/login"><button class="py-3 px-5 text-lg bg-blue-500 rounded-md text-white">Login</button></a>
+       <button (click)="onLogout()" class="py-3 px-5 text-lg bg-blue-500 rounded-md text-white">Logout</button>
+      </div>
+     </div>
       <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
         <thead>
             <tr>

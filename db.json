@@ -35,6 +35,29 @@
       "image": "https://picsum.photos/id/14/305/312",
       "price": 3000,
       "id": 11
+    },
+    {
+      "name": "sản phẩm 18",
+      "image": "https://picsum.photos/id/18/305/312",
+      "price": 344,
+      "id": 12
+    }
+  ],
+  "users": [
+    {
+      "email": "doanbvph32532@fpt.edu.vn",
+      "password": "$2a$10$MYfS1JbEz/rw9zmCpx7b1ePI4xpgDmIjG//K7HvIsl5uI7WWQZ8by",
+      "id": 1
+    },
+    {
+      "email": "doan@gmail.com",
+      "password": "$2a$10$YXD9BtsR5XZaEO6L6C9RnuTSZGzGuXVnmmSKbsuDLcb71dhHvhXae",
+      "id": 2
+    },
+    {
+      "email": "doan1@gmail.com",
+      "password": "$2a$10$QxhB/FPCoiIVlDjTzRBGu.mp2Ri9K/QFL/iR6kpAt5Va85XaAu1J2",
+      "id": 3
     }
   ]
 }
