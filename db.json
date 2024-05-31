@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "name": "hello",
+      "image": "https://picsum.photos/id/15/305/312",
+      "price": "3000",
+      "id": 6
+    },
+    {
+      "name": "sản phẩm 4",
+      "image": "https://picsum.photos/id/15/305/312",
+      "price": "3344",
+      "id": 7
+    },
+    {
+      "name": "sản phẩm 5",
+      "image": "https://picsum.photos/id/15/305/312",
+      "price": "1234",
+      "id": 8
+    },
+    {
+      "name": "Sản phẩm 9",
+      "image": "https://picsum.photos/id/20/305/312",
+      "price": 16900000,
+      "id": 9
+    },
+    {
+      "name": "dự án tốt nghiệp",
+      "image": "https://picsum.photos/id/31/305/312",
+      "price": 23500,
+      "id": 10
+    },
+    {
+      "name": "sản phẩm 10 update",
+      "image": "https://picsum.photos/id/14/305/312",
+      "price": 3000,
+      "id": 11
+    }
+  ]
+}

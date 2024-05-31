@@ -1,0 +1,32 @@
+<div class="container mx-auto">
+  <div class="w-[100%]">
+
+    <div class="max-w-[80%] mx-auto">
+      <a routerLink="/add"><button class="py-3 px-5 text-lg bg-blue-500 rounded-md text-white my-3">Add Product</button></a>
+      <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
+        <thead>
+            <tr>
+                <th class="px-4 py-2 border-b-2 border-gray-200 text-left text-gray-600">Name</th>
+                <th class="px-4 py-2 border-b-2 border-gray-200 text-left text-gray-600">Image</th>
+                <th class="px-4 py-2 border-b-2 border-gray-200 text-left text-gray-600">Price</th>
+                <th class="px-4 py-2 border-b-2 border-gray-200 text-left text-gray-600">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products,index as i" class="border-b border-gray-200 hover:bg-gray-100">
+                <td class="px-4 py-2">{{product.name}}</td>
+                <td class="px-4 py-2">
+                    <img src={{product.image}} alt="Product 2" class="w-12 h-12 rounded-full">
+                </td>
+                <td class="px-4 py-2">{{product.price}}</td>
+                <td class="px-4 py-2">
+                    <button class="px-4 py-2 bg-red-500 text-white rounded hover:bg-yellow-700"  (click)="onDelete(product)" >Delete</button>
+                    <a routerLink="/{{product.id}}/edit"><button class="px-4 py-2 mx-2 bg-yellow-500 text-white rounded hover:bg-yellow-700" >Update</button></a>
+                </td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+    </div>
+  </div>
+</div>
