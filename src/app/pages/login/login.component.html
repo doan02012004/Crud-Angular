@@ -1,21 +1,53 @@
-<!-- login  -->
-
 <div class="bg-gray-100 flex items-center justify-center h-screen">
   <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-      <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
-      <form action="#" method="POST">
-          <div class="mb-4">
-              <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
-              <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your email">
-          </div>
-          <div class="mb-4">
-              <label for="password" class="block text-gray-700 font-bold mb-2">Password</label>
-              <input type="password" id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your password">
-          </div>
-          <div class="flex items-center justify-between">
-              <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Login</button>
-              <a href="#" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">Register?</a>
-          </div>
-      </form>
+    <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <div class="mb-4">
+        <label for="email" class="block text-gray-700 font-bold mb-2"
+          >Email</label
+        >
+        <input
+          type="email"
+          id="email"
+
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          placeholder="Enter your email"
+          formControlName="email"
+        />
+        <div *ngIf="userForm.get('email').invalid && (userForm.get('email').dirty||userForm.get('email').touched)">
+          <span *ngIf="userForm.get('email').errors.required" class="text-red-500 text-sm">Bắt buộc nhập</span>
+          <span *ngIf="userForm.get('email').errors.email" class="text-red-500 text-sm">Không đúng định dạng email</span>
+        </div>
+      </div>
+      <div class="mb-4">
+        <label for="password" class="block text-gray-700 font-bold mb-2"
+          >Password</label
+        >
+        <input
+          type="password"
+          id="password"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          placeholder="Enter your password"
+          formControlName="password"
+        />
+        <div *ngIf="userForm.get('password').invalid && (userForm.get('password').dirty||userForm.get('password').touched)">
+          <span *ngIf="userForm.get('password').errors.required" class="text-red-500 text-sm">Bắt buộc nhập</span>
+          <span *ngIf="userForm.get('password').errors.minlength" class="text-red-500 text-sm">Password ít nhất 6 ký tự</span>
+        </div>
+      </div>
+      <div class="flex items-center justify-between">
+        <button
+          type="submit"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >
+          Login
+        </button>
+        <a
+          href="/register"
+          class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
+          >Register?</a
+        >
+      </div>
+    </form>
   </div>
 </div>
