@@ -1,0 +1,16 @@
+{
+  "products": [
+    {
+      "name": "Sản phẩm A update",
+      "price": 300,
+      "image": "http://picsum.photos/id/19/300/300",
+      "id": 1
+    },
+    {
+      "name": "Sản phẩm B",
+      "price": 555,
+      "image": "https://picsum.photos/id/15/305/312",
+      "id": 3
+    }
+  ]
+}

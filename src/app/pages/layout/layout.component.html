@@ -1,0 +1,138 @@
+<!-- form add  -->
+<div *ngIf="openForm">
+  <div class="fixed top-0 bottom-0 right-0 left-0 bg-black bg-opacity-25">
+    <div class="p-16">
+      <div class="max-w-[500px] mx-auto">
+        <div class="bg-white p-20 rounded-lg shadow-lg relative">
+          <button
+            (click)="onCloseForm()"
+            class="px-3 py-1 absolute right-1 top-2 text-lg border border-gray-300"
+          >
+            X
+          </button>
+          <h2 class="text-2xl font-bold mb-6">Add New Product</h2>
+          <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+            <div class="mb-4">
+              <label for="name" class="block text-gray-700 font-bold mb-2"
+                >Product Name</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Enter product name"
+                formControlName="name"
+              />
+              <div *ngIf="productForm.get('name').invalid && (productForm.get('name').dirty||productForm.get('name').touched)">
+                <span *ngIf="productForm.get('name').errors.required" class="text-red-500 text-sm">Bắt buộc nhập</span>
+              </div>
+            </div>
+            <div class="mb-4">
+              <label for="image" class="block text-gray-700 font-bold mb-2"
+                >Image URL</label
+              >
+              <input
+                type="text"
+                id="image"
+                name="image"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Enter image URL"
+                formControlName="image"
+              />
+              <div *ngIf="productForm.get('image').invalid && (productForm.get('image').dirty||productForm.get('image').touched)">
+                <span *ngIf="productForm.get('image').errors.required" class="text-red-500 text-sm">Bắt buộc nhập</span>
+              </div>
+            </div>
+            <div class="mb-4">
+              <label for="price" class="block text-gray-700 font-bold mb-2"
+                >Price</label
+              >
+              <input
+                type="number"
+                id="price"
+                name="price"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Enter price"
+                formControlName="price"
+              />
+              <div *ngIf="productForm.get('price').invalid && (productForm.get('price').dirty||productForm.get('price').touched)">
+                <span *ngIf="productForm.get('price').errors.required" class="text-red-500 text-sm">Bắt buộc nhập</span>
+                <span *ngIf="productForm.get('price').errors.min" class="text-red-500 text-sm">Bắt buộc là số dương</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <button
+                type="submit"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              >
+                {{optionForm=="add"?"Add Product":"Update Product"}}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bg-gray-100 p-8">
+  <div class="container mx-auto">
+    <div class="flex justify-between items-center my-5">
+      <button
+        class="text-white text-lg px-5 py-2 rounded-md bg-blue-500"
+        (click)="onOpenForm()"
+      >
+        Add Product
+      </button>
+      <div class="flex items-center gap-4">
+        <a href=""
+          ><button class="text-white text-lg px-5 py-2 rounded-md bg-blue-500">
+            Login
+          </button></a
+        >
+        <button class="text-white text-lg px-5 py-2 rounded-md bg-yellow-500">
+          Logout
+        </button>
+      </div>
+    </div>
+    <table class="min-w-full bg-white border border-gray-300">
+      <thead>
+        <tr>
+          <th class="py-2 px-4 border-b bg-gray-200 text-left">Name</th>
+          <th class="py-2 px-4 border-b bg-gray-200 text-left">Image</th>
+          <th class="py-2 px-4 border-b bg-gray-200 text-left">Price</th>
+          <th class="py-2 px-4 border-b bg-gray-200 text-left">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products" class="bg-gray-50">
+          <td class="py-2 px-4 border-b">{{ product.name }}</td>
+          <td class="py-2 px-4 border-b">
+            <img
+              src="{{ product.image }}"
+              alt="{{ product.name }}"
+              class="w-16 h-16 object-cover"
+            />
+          </td>
+          <td class="py-2 px-4 border-b">{{ product.price }}</td>
+          <td class="py-2 px-4 border-b">
+            <button
+              class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-3 rounded mr-2"
+              (click)="onUpdate(product)"
+            >
+              Update
+            </button>
+            <button
+              class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded"
+              (click)="onDelete(product.id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+
+        <!-- Thêm các sản phẩm khác tại đây -->
+      </tbody>
+    </table>
+  </div>
+</div>
