@@ -13,6 +13,7 @@
                   <th class="py-2 px-4 border-b bg-gray-200 text-left">Name</th>
                   <th class="py-2 px-4 border-b bg-gray-200 text-left">Image</th>
                   <th class="py-2 px-4 border-b bg-gray-200 text-left">Price</th>
+                  <th class="py-2 px-4 border-b bg-gray-200 text-left">Description</th>
                   <th class="py-2 px-4 border-b bg-gray-200 text-left">Action</th>
               </tr>
           </thead>
@@ -23,22 +24,13 @@
                       <img src="image1.jpg" alt="Product 1" class="w-16 h-16 object-cover">
                   </td>
                   <td class="py-2 px-4 border-b">$10.00</td>
+                  <td class="py-2 px-4 border-b">Mô tả</td>
                   <td class="py-2 px-4 border-b">
                       <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-3 rounded mr-2">Update</button>
                       <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded">Delete</button>
                   </td>
               </tr>
-              <tr>
-                  <td class="py-2 px-4 border-b">Product 2</td>
-                  <td class="py-2 px-4 border-b">
-                      <img src="image2.jpg" alt="Product 2" class="w-16 h-16 object-cover">
-                  </td>
-                  <td class="py-2 px-4 border-b">$20.00</td>
-                  <td class="py-2 px-4 border-b">
-                      <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-3 rounded mr-2">Update</button>
-                      <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded">Delete</button>
-                  </td>
-              </tr>
+
               <!-- Thêm các sản phẩm khác tại đây -->
           </tbody>
       </table>
@@ -63,6 +55,10 @@
                   <label for="price" class="block text-gray-700 font-bold mb-2">Price</label>
                   <input type="number" id="price" name="price" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter price">
               </div>
+              <div class="mb-4">
+                <label for="description" class="block text-gray-700 font-bold mb-2">Description</label>
+                <input type="text" id="image" name="description" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter description">
+            </div>
               <div class="flex items-center justify-between">
                   <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Add Product</button>
               </div>
