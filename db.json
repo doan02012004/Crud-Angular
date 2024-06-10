@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "name": "sản phẩm 1",
+      "image": "https://picsum.photos/id/15/305/312",
+      "price": 400,
+      "description": "hay",
+      "id": 1
+    }
+  ],
+  "users": [
+    {
+      "email": "doan@gmail.com",
+      "password": "$2a$10$YIyd5tbU.U4BPTMWlBD0KOAOyzlTpoLZfSUaiwXEaKSl74ngwymRe",
+      "cfpassword": "123456",
+      "id": 1
+    },
+    {
+      "email": "doan1@gmail.com",
+      "password": "$2a$10$RfOZ05gznaa.IKZmACi2seeY0TIIFHlgY2JTHwZDYSBxqvzyMJgKO",
+      "cfpassword": "123456",
+      "id": 2
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+<!-- form add  -->
+<div class="bg-gray-100 p-8">
+  <div class="container mx-auto">
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-bold mb-6">Add New Product</h2>
+      <form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700 font-bold mb-2"
+            >Product Name</label
+          >
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Enter product name"
+            formControlName="name"
+          />
+          <div *ngIf="dataForm.get('name').invalid && (dataForm.get('name').dirty || dataForm.get('name').touched)">
+                  <span *ngIf="dataForm.get('name').errors.required" class="text-red-500">Bắt buộc nhập</span>
+          </div>
+        </div>
+        <div class="mb-4">
+          <label for="image" class="block text-gray-700 font-bold mb-2"
+            >Image URL</label
+          >
+          <input
+            type="text"
+            id="image"
+            name="image"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Enter image URL"
+            formControlName="image"
+          />
+          <div *ngIf="dataForm.get('image').invalid && (dataForm.get('image').dirty || dataForm.get('image').touched)">
+            <span *ngIf="dataForm.get('image').errors.required" class="text-red-500">Bắt buộc nhập</span>
+          </div>
+        </div>
+        <div class="mb-4">
+          <label for="price" class="block text-gray-700 font-bold mb-2"
+            >Price</label
+          >
+          <input
+            type="number"
+            id="price"
+            name="price"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Enter price"
+            formControlName="price"
+          />
+          <div *ngIf="dataForm.get('price').invalid && (dataForm.get('price').dirty || dataForm.get('price').touched)">
+            <span *ngIf="dataForm.get('price').errors.required" class="text-red-500">Bắt buộc nhập</span>
+            <span *ngIf="dataForm.get('price').errors.min" class="text-red-500">Bắt buộc là số dương</span>
+          </div>
+        </div>
+        <div class="mb-4">
+          <label for="description" class="block text-gray-700 font-bold mb-2"
+            >Description</label
+          >
+          <input
+            type="text"
+            id="image"
+            name="description"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Enter description"
+            formControlName="description"
+          />
+          <div *ngIf="dataForm.get('description').invalid && (dataForm.get('description').dirty || dataForm.get('description').touched)">
+            <span *ngIf="dataForm.get('description').errors.required" class="text-red-500">Bắt buộc nhập</span>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <button
+            type="submit"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            Add Product
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
