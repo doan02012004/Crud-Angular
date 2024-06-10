@@ -1,3 +1,5 @@
+<router-outlet></router-outlet>
+
 <div class="bg-gray-100 p-8">
   <div class="container mx-auto">
     <div class="flex justify-between items-center my-5">
@@ -13,6 +15,7 @@
                   <th class="py-2 px-4 border-b bg-gray-200 text-left">Name</th>
                   <th class="py-2 px-4 border-b bg-gray-200 text-left">Image</th>
                   <th class="py-2 px-4 border-b bg-gray-200 text-left">Price</th>
+                  <th class="py-2 px-4 border-b bg-gray-200 text-left">Quantity</th>
                   <th class="py-2 px-4 border-b bg-gray-200 text-left">Description</th>
                   <th class="py-2 px-4 border-b bg-gray-200 text-left">Action</th>
               </tr>
@@ -24,6 +27,7 @@
                       <img src="image1.jpg" alt="Product 1" class="w-16 h-16 object-cover">
                   </td>
                   <td class="py-2 px-4 border-b">$10.00</td>
+                  <td class="py-2 px-4 border-b">33</td>
                   <td class="py-2 px-4 border-b">Mô tả</td>
                   <td class="py-2 px-4 border-b">
                       <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-3 rounded mr-2">Update</button>
@@ -79,8 +83,12 @@
           </div>
           <div class="mb-4">
               <label for="password" class="block text-gray-700 font-bold mb-2">Password</label>
-              <input type="password" id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your password">
+              <input type="text" id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your password">
           </div>
+          <div class="mb-4">
+            <label for="cfpassword" class="block text-gray-700 font-bold mb-2">Password</label>
+            <input type="text" id="cfpassword" name="cfpassword" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your password">
+        </div>
           <div class="flex items-center justify-between">
               <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Login</button>
               <a href="#" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">Register?</a>
